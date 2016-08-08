@@ -12,16 +12,11 @@ gulp.task("vue", function() {
         .pipe(livereload())
 });
 
-gulp.task("css",function(){
-    return gulp.src('src/style.css')
-        .pipe(gulp.dest('./dist'))
-        .pipe(livereload())
+
+gulp.task('watchvue',function(){
+    livereload.listen('http://http://127.0.0.1:5000/')
+    gulp.watch(['app/static/js/src/*/*.*','app/templates/index.html'], ['vue']);
 })
 
-gulp.task('watchcss',function(){
-    livereload.listen()
-    gulp.watch(['src/*/*.*','index.html'], ['vue']);
-})
-
-gulp.task('default', ['vue']);
+gulp.task('default', ['watchvue']);
 

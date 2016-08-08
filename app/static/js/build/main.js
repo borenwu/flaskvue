@@ -29,18 +29,55 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-1601699a", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":5,"vue-hot-reload-api":4,"vueify/lib/insert-css":6}],2:[function(require,module,exports){
+},{"vue":6,"vue-hot-reload-api":5,"vueify/lib/insert-css":7}],2:[function(require,module,exports){
+var __vueify_insert__ = require("vueify/lib/insert-css")
+var __vueify_style__ = __vueify_insert__.insert("\n#app2 {\n    color: deeppink;\n    font-size: 24px;\n}\n")
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    data: function data() {
+        return {
+            msg: 'This is app2 demo!'
+        };
+    },
+
+    created: function created() {
+        console.log('app2 created');
+    }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"app2\">{{ msg }}</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.dispose(function () {
+    __vueify_insert__.cache["\n#app2 {\n    color: deeppink;\n    font-size: 24px;\n}\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-a9fc76e2", module.exports)
+  } else {
+    hotAPI.update("_v-a9fc76e2", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":6,"vue-hot-reload-api":5,"vueify/lib/insert-css":7}],3:[function(require,module,exports){
 var Vue = require('vue')
 var App = require('./components/app.vue')
+var App2 = require('./components/app2.vue')
 
-new Vue({
-  el: '#example',
-  components: {
-    app: App
-  }
+var main = new Vue({
+    el: '#example',
+    components: {
+        app: App,
+        app2: App2
+    }
 })
 
-},{"./components/app.vue":1,"vue":5}],3:[function(require,module,exports){
+},{"./components/app.vue":1,"./components/app2.vue":2,"vue":6}],4:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -105,7 +142,7 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 var Vue // late bind
 var map = window.__VUE_HOT_MAP__ = Object.create(null)
 var installed = false
@@ -237,7 +274,7 @@ exports.reload = tryWrap(function (id, options) {
   })
 })
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 (function (process,global){
 /*!
  * Vue.js v1.0.26
@@ -10314,7 +10351,7 @@ setTimeout(function () {
 
 module.exports = Vue;
 }).call(this,require("teFmKC"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"teFmKC":3}],6:[function(require,module,exports){
+},{"teFmKC":4}],7:[function(require,module,exports){
 var inserted = exports.cache = {}
 
 exports.insert = function (css) {
@@ -10334,4 +10371,4 @@ exports.insert = function (css) {
   return elem
 }
 
-},{}]},{},[2])
+},{}]},{},[3])
