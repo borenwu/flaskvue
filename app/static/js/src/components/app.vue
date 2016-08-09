@@ -12,7 +12,7 @@
 export default {
   data () {
     return {
-      msg: 'Hello world! Flask and Vue!'
+      msg: 'Hello world! Flask and Vue demo!!!!'
     }
   }
 }
