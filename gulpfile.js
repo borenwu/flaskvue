@@ -3,6 +3,7 @@ var browserify = require('gulp-browserify')
 var livereload = require('gulp-livereload')
 var connect = require('gulp-connect')
 
+
 gulp.task("vue", function() {
     return gulp.src('app/static/js/src/main.js')
         .pipe(browserify({
